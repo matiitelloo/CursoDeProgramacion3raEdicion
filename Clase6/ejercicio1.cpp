@@ -1,9 +1,9 @@
 /*
-EJERCICIO DE REPASO 6
+EJERCICIO DE REPASO 1
 Autor: Matías Tello S.
 Fecha: 24 de Julio de 2026
 
-Ejercicio6: Many simple con switch
+Ejercicio1: Many simple con switch
 
 Switch: es una estructura de seleccion que permite ejecutar diferentes bloques de codigo segun el valor de una
 variable
