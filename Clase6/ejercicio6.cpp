@@ -85,6 +85,9 @@ int main(){
                 cout << "Opcion invalida. Por favor, seleccione una opcion valida." << endl;
         }
     }while(opcion != 3); //Repetimos el menu hasta que el usuario elija la opcion 3
+   
+    cout << "Gracias por usar el programa. Hasta luego!" << endl;
 
     return 0;
+
     }
