@@ -8,6 +8,8 @@ Salida: reporte general y resultado de búsqueda
 */
 
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 void mostrarMenu() {
@@ -43,7 +45,7 @@ do{
     switch(opcion) {
             case 1:
                 cantidad = registrarEstudiantes(nombres, notas);
-                hayDatos = true; // Confirmamos que ya podemos usar las opciones 2 y 3
+                hayDatos = true;
                 break;
             case 2:
                 if (hayDatos == false) {
@@ -96,6 +98,7 @@ int registrarEstudiantes(string nombres[], float notas[]) {
     
     cout << "Datos registrados exitosamente.";
     return n;
+}
 
 void mostrarReporte(string nombres[], float notas[], int cantidad) {
 
@@ -106,7 +109,7 @@ void mostrarReporte(string nombres[], float notas[], int cantidad) {
     int aprobados = 0, reprobados = 0;
 
     cout << "=== REPORTE GENERAL ===";
-    
+
     for (int i = 0; i < cantidad; i++) {
         string estado;
         if (notas[i] >= 14) {
@@ -116,3 +119,46 @@ void mostrarReporte(string nombres[], float notas[], int cantidad) {
             estado = "REPROBADO";
             reprobados++;
         }
+
+        cout << i + 1 << ". " << nombres[i] << " - Nota: " << notas[i] << " - Estado: " << estado << endl;
+
+        sumaNotas += notas[i];
+
+        if (notas[i] > notaMayor) {
+            notaMayor = notas[i];
+            nombreMayor = nombres[i];
+        }
+        if (notas[i] < notaMenor) {
+            notaMenor = notas[i];
+            nombreMenor = nombres[i];
+        }
+    }
+
+    cout << "-> Promedio general: " << (sumaNotas / cantidad) << endl;
+    cout << "-> Estudiante con nota mayor: " << nombreMayor << " (" << notaMayor << ")" << endl;
+    cout << "-> Estudiante con nota menor: " << nombreMenor << " (" << notaMenor << ")" << endl;
+    cout << "-> Total Aprobados: " << aprobados << endl;
+    cout << "-> Total Reprobados: " << reprobados << endl;
+}
+
+void buscarEstudiante(string nombres[], float notas[], int cantidad) {
+    string nombreBuscado;
+    cout << "\nIngrese el nombre exacto del estudiante a buscar: ";
+    cin >> nombreBuscado;
+
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        if (nombres[i] == nombreBuscado) {
+            string estado = (notas[i] >= 14) ? "APROBADO" : "REPROBADO";
+            cout << "\nEstudiante Encontrado:\n";
+            cout << "Nombre: " << nombres[i] << " | Nota: " << notas[i] << " | Estado: " << estado << endl;
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (encontrado == false) {
+        cout << "No se encontro a ningun estudiante con el nombre '" << nombreBuscado << "'.";
+    }
+}
