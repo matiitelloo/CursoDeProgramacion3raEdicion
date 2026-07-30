@@ -41,8 +41,8 @@ int main() {
             
             cout << "Ingrese un numero: ";
             cin >> num;
-            doble = num*3;
-            cout << "El triple de " << num << " es: " << doble << endl;
+            triple = num*3;
+            cout << "El triple de " << num << " es: " << triple << endl;
             break;        
         case 3:
         
