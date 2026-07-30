@@ -1,5 +1,5 @@
 /*
-Menú repetitivo
+Menú repetitivo con switch
 EJERCICIO 4
 Autor: Matías Tello S.
 Fecha: 30 de Julio de 2026
@@ -21,8 +21,7 @@ int main() {
 
     int opcion, num, doble, triple;
 
-    do {
-
+    do{
         cout << "============ MENU ============:" << endl;
         cout << "1. Mostrar el doble de un numero" << endl;
         cout << "2. Mostrar el triple de un numero" << endl;
@@ -30,33 +29,31 @@ int main() {
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        if (opcion == 1) { 
-
+        switch (opcion){
+        case 1:
+            
             cout << "Ingrese un numero: ";
             cin >> num;
-
             doble = num*2;
-
             cout << "El doble de " << num << " es: " << doble << endl;
-
-        }else if (opcion == 2) {
-
+            break;
+        case 2:
+            
             cout << "Ingrese un numero: ";
             cin >> num;
-
-            triple = num*3;
-
-            cout << "El triple de " << num << " es: " << triple << endl;
-
-        }else if (opcion == 3){
+            doble = num*3;
+            cout << "El triple de " << num << " es: " << doble << endl;
+            break;        
+        case 3:
+        
             cout << "Saliendo del programa..." << endl;
-
-        }else{
+            break; 
+        default:
             cout << "Opcion invalida, por favor seleccione una opcion valida." << endl;
+        break; 
         }
 
-    } while (opcion !=3);
+    }while (opcion != 3);
 
     return 0;
-
 }
