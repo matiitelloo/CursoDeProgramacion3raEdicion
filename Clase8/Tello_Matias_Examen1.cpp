@@ -38,8 +38,10 @@ do{
 
 
     while (opcion < 1 || opcion > 4){
-    cout << "Opcion invalida. Intente de nuevo: ";
+    cout << "Opcion invalida. Intente de nuevo: "<< endl;
+    mostrarMenu();
     cin >> opcion;
+
     }
 
     switch(opcion) {
@@ -134,16 +136,16 @@ void mostrarReporte(string nombres[], float notas[], int cantidad) {
         }
     }
 
-    cout << "-> Promedio general: " << (sumaNotas / cantidad) << endl;
-    cout << "-> Estudiante con nota mayor: " << nombreMayor << " (" << notaMayor << ")" << endl;
-    cout << "-> Estudiante con nota menor: " << nombreMenor << " (" << notaMenor << ")" << endl;
-    cout << "-> Total Aprobados: " << aprobados << endl;
-    cout << "-> Total Reprobados: " << reprobados << endl;
+    cout << "Promedio general: " << (sumaNotas / cantidad) << endl;
+    cout << "Estudiante con nota mayor: " << nombreMayor << " (" << notaMayor << ")" << endl;
+    cout << "Estudiante con nota menor: " << nombreMenor << " (" << notaMenor << ")" << endl;
+    cout << "Total Aprobados: " << aprobados << endl;
+    cout << "Total Reprobados: " << reprobados << endl;
 }
 
 void buscarEstudiante(string nombres[], float notas[], int cantidad) {
     string nombreBuscado;
-    cout << "\nIngrese el nombre exacto del estudiante a buscar: ";
+    cout << "Ingrese el nombre exacto del estudiante a buscar: ";
     cin >> nombreBuscado;
 
     bool encontrado = false;
@@ -151,7 +153,7 @@ void buscarEstudiante(string nombres[], float notas[], int cantidad) {
     for (int i = 0; i < cantidad; i++) {
         if (nombres[i] == nombreBuscado) {
             string estado = (notas[i] >= 14) ? "APROBADO" : "REPROBADO";
-            cout << "\nEstudiante Encontrado:\n";
+            cout << "Estudiante Encontrado:";
             cout << "Nombre: " << nombres[i] << " | Nota: " << notas[i] << " | Estado: " << estado << endl;
             encontrado = true;
             break;
