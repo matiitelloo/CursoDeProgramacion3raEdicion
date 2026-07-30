@@ -38,8 +38,10 @@ do{
 
 
     while (opcion < 1 || opcion > 4){
-    cout << "Opcion invalida. Intente de nuevo: ";
+    cout << "Opcion invalida. Intente de nuevo: "<< endl;
+    mostrarMenu();
     cin >> opcion;
+
     }
 
     switch(opcion) {
@@ -62,7 +64,7 @@ do{
                 }
                 break;
             case 4:
-                cout << "Saliendo del sistema...";
+                cout << "\nSaliendo del sistema...\n";
                 break;
         }
 } while (opcion != 4);
