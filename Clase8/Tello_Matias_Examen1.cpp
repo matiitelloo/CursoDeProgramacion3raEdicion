@@ -49,20 +49,20 @@ do{
                 break;
             case 2:
                 if (hayDatos == false) {
-                    cout << "\nError: Todavia no existen datos registrados.\n";
+                    cout << "Error: Todavia no existen datos registrados.";
                 } else {
                     mostrarReporte(nombres, notas, cantidad);
                 }
                 break;
             case 3:
                 if (hayDatos == false) {
-                    cout << "\nError: Todavia no existen datos registrados.\n";
+                    cout << "Error: Todavia no existen datos registrados.";
                 } else {
                     buscarEstudiante(nombres, notas, cantidad);
                 }
                 break;
             case 4:
-                cout << "\nSaliendo del sistema...\n";
+                cout << "\nSaliendo del sistema...";
                 break;
         }
 } while (opcion != 4);
@@ -108,7 +108,7 @@ void mostrarReporte(string nombres[], float notas[], int cantidad) {
     string nombreMayor, nombreMenor;
     int aprobados = 0, reprobados = 0;
 
-    cout << "=== REPORTE GENERAL ===";
+    cout << "=== REPORTE GENERAL ===" << endl;
 
     for (int i = 0; i < cantidad; i++) {
         string estado;
