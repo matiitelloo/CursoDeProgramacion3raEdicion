@@ -80,6 +80,7 @@ int registrarEstudiantes(string nombres[], float notas[]) {
     }
 
     for (int i = 0; i < n; i++) {
+        
         cout << "Estudiante " << i + 1 << ":" << endl;
         cout << "Primer nombre: ";
         cin >> nombres[i];
@@ -96,4 +97,22 @@ int registrarEstudiantes(string nombres[], float notas[]) {
     cout << "Datos registrados exitosamente.";
     return n;
 
+void mostrarReporte(string nombres[], float notas[], int cantidad) {
+
+    float sumaNotas = 0;
+    float notaMayor = -1;
+    float notaMenor = 21;
+    string nombreMayor, nombreMenor;
+    int aprobados = 0, reprobados = 0;
+
+    cout << "=== REPORTE GENERAL ===";
     
+    for (int i = 0; i < cantidad; i++) {
+        string estado;
+        if (notas[i] >= 14) {
+            estado = "APROBADO";
+            aprobados++;
+        } else {
+            estado = "REPROBADO";
+            reprobados++;
+        }
