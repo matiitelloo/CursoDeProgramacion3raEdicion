@@ -98,7 +98,7 @@ int registrarEstudiantes(string nombres[], float notas[]) {
         }
     }
     
-    cout << "Datos registrados exitosamente.";
+    cout << "Datos registrados exitosamente." << endl;
     return n;
 }
 
@@ -124,7 +124,7 @@ void mostrarReporte(string nombres[], float notas[], int cantidad) {
 
         cout << i + 1 << ". " << nombres[i] << " - Nota: " << notas[i] << " - Estado: " << estado << endl;
 
-        sumaNotas += notas[i];
+      sumaNotas = sumaNotas + notas[i];
 
         if (notas[i] > notaMayor) {
             notaMayor = notas[i];
