@@ -27,4 +27,6 @@ int main(){
     }
     cout << "La tabla fue generada correctamente.";
 
+return 0;
+
 }
