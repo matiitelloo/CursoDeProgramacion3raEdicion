@@ -1,5 +1,5 @@
 /*
-Bucles y menús en C++
+Números pares hasta N
 EJERCICIO 1
 Autor: Matías Tello S.
 Fecha: 30 de Julio de 2026
@@ -17,11 +17,11 @@ using namespace std;
 int main (){
     int N;
 
-    cout << "Ingrese un numero positivo N: ";
+    cout << "Ingrese un numero positivo: ";
     cin >> N;
 
     if (N<=0) {
-        cout << "ERROR. Ingrese un numero positivo N";
+        cout << "ERROR. Ingrese un numero positivo.";
     } else {
         cout << "Numero pares desde 1 hasta " << N << ":" << endl;
 
