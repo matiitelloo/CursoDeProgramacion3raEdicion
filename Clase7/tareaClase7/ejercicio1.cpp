@@ -12,6 +12,23 @@ Luego, el programa debe:
 4. en caso de encontrarla, mostrar la posición de la primera coincidencia
 */
 
+/*
+MODELO E/P/S
+Entrada: 
+    8 edades enteras para el arreglo
+    1 edad entera adicional a buscar
+Proceso: 
+    Declarar el arreglo de 8 posiciones
+    Leer las 8 edades con un ciclo for
+    Mostrar las edades registradas con su posicion
+    Leer la edad a buscar
+    Realizar la busqueda secuencial usando una variable bandera
+    Guardar la posicion de la primera coincidencia
+Salida:
+    Lista de edades registradas con sus posiciones
+    Mensaje indicando si fue encontrada y su posicion, o mensaje de no encontrada
+*/
+
 #include <iostream>
 using namespace std;
 

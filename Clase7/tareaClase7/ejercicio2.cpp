@@ -14,6 +14,23 @@ Luego, el programa debe:
 que no fue encontrada
 */
 
+/*
+MODELO E/P/S
+Entrada: 
+    6 cantidades enteras de productos vendidos
+    1 cantidad entera especifica a buscar
+Proceso: 
+    Declarar el arreglo de 6 posiciones
+    Leer las 6 cantidades vendidas con un ciclo for
+    Mostrar las cantidades registradas
+    Leer la cantidad a buscar
+    Realizar la busqueda secuencial con la variable bandera 'encontrado'
+    Detener la busqueda en la primera coincidencia usando break
+Salida:
+    Lista de todas las cantidades ingresadas
+    Mensaje mostrando la posicion de la primera aparicion, o mensaje indicando que no fue encontrada
+*/
+
 #include <iostream>
 using namespace std;
 
