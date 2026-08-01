@@ -55,6 +55,7 @@ int main()
         {
             encontrado = true;
             posicion = i;
+            break;
         }
     }
 
@@ -62,7 +63,7 @@ int main()
 
     if (encontrado == true)
     {
-        cout << "Cantidad encontrada en la posicion: " << posicion << endl;
+        cout << "Cantidad encontrada en la posicion: " << posicion + 1 << endl;
     }
     else
     {

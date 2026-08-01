@@ -60,11 +60,11 @@ int main()
 
     if (encontrado == true)
     {
-        cout << "Edad encontrada en la posicion: " << posicion << endl;
+        cout << "Edad encontrada en la posicion: " << posicion + 1 << endl;
     }
     else
     {
-        cout << "Edad no encontrado en el arreglo." << endl;
+        cout << "Edad no encontrada en el arreglo." << endl;
     }
 
     return 0;
