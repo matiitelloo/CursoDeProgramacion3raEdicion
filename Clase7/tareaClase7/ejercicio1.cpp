@@ -53,6 +53,7 @@ int main()
         {
             encontrado = true;
             posicion = i;
+            break;
         }
     }
 
