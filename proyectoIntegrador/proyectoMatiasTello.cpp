@@ -183,3 +183,20 @@ void buscarPelicula(string nombres[], float calificaciones[], int duraciones[], 
         cout << "Error: la pelicula "<< "\033[1m" << busqueda << "\033[0m" << " no se encuentra en el registro." << endl;
     }
 }
+
+void reporte(string nombres[], int duraciones[], int cantidad){
+    int sumaDuracion = 0;
+    int posMasLarga = 0;
+
+    for (int i = 0; i < cantidad; i++){
+        sumaDuracion += duraciones[i];
+        if (duraciones[i] > duraciones[posMasLarga]) {
+            posMasLarga = i;
+    }
+    
+    cout << "==== REPORTE GENERAL ====" << endl;
+    cout << "Cantidad de peliculas: " << cantidad << endl;
+    cout << "Tiempo total de reproduccion: " << sumaDuracion << " minutos" << endl;
+    cout << "Pelicula mas larga: " << nombres[posMasLarga] 
+         << " (" << duraciones[posMasLarga] << " min)" << endl;
+}
