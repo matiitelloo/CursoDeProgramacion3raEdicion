@@ -149,3 +149,12 @@ void registrarPelicula(string nombres[], float calificaciones[], int duraciones[
     cantidad ++;
     cout << "Pelicula registrada con exito." << endl;
 }
+
+void mostrarPeliculas(string nombres[], float calificaciones[], int duraciones[], int cantidad){
+    cout << "==== LISTA DE PELICULAS REGISTRADAS ===="<< endl;
+    for (int i = 0; i < cantidad; i++){
+        cout << i + 1 << "." << nombres[i];
+        cout << " | Calificacion: " << calificaciones[i] << "/10";
+        cout << " | Duracion: " << duraciones[i] << " min" << endl;
+    }
+}
