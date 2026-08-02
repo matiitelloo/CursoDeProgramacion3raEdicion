@@ -158,3 +158,28 @@ void mostrarPeliculas(string nombres[], float calificaciones[], int duraciones[]
         cout << " | Duracion: " << duraciones[i] << " min" << endl;
     }
 }
+
+void buscarPelicula(string nombres[], float calificaciones[], int duraciones[], int cantidad){
+    cin.ignore();
+    string busqueda;
+    cout << "==== BUSCAR PELICULA ====";
+    cout << "Ingrese el nombre exacto de la pelicula: ";
+    getline(cin, busqueda);
+
+    bool encontrada = false;
+
+    for (int i = 0; i < cantidad; i++){
+    if (nombres[i] == busqueda){
+        cout << "PELICULA ENCONTRADA!" << endl;
+        cout << "Nombre: " << nombres[i] << endl;
+        cout << "Calificacion: " << calificaciones[i] << "/10" << endl;
+        cout << "Duracion: " << duraciones[i] << " min" << endl;
+        encontrada = true;
+        break; 
+        }
+    }
+
+    if(!encontrada){
+        cout << "Error: la pelicula "<< "\033[1m" << busqueda << "\033[0m" << " no se encuentra en el registro." << endl;
+    }
+}
