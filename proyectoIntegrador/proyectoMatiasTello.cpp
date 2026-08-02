@@ -119,5 +119,33 @@ int main(){
     } while (opcion != 6);
 
     return 0;
+}
 
+void registrarPelicula(string nombres[], float calificaciones[], int duraciones[], int &cantidad) {
+    if (cantidad >= 20) {
+        cout << "El sistema ha alcanzado su capacidad maxima (20 peliculas)." << endl;
+        return;
+    }
+
+    cin.ignore();
+    cout << "==== REGISTRO DE PELICULA ====" << endl;
+    cout << "Ingrese el nombre de la pelicula: ";
+    getline(cin, nombres[cantidad]);
+
+    cout << "Ingrese la calificacion (0-10): ";
+    cin >> calificaciones[cantidad];
+    while (calificaciones[cantidad] < 0  || calificaciones[cantidad] > 10) {
+        cout << "ERROR. La calificacion debe estar entre 0 y 10: ";
+        cin >> calificaciones[cantidad];
+    }
+
+    cout << "Ingrese la duracion (minutos): ";
+    cin >> duraciones[cantidad];
+    while (duraciones[cantidad] <= 0) {
+        cout << "ERROR. La duracion debe ser mayor a 0 minutos: ";
+        cin >> duraciones[cantidad];
+    }
+
+    cantidad ++;
+    cout << "Pelicula registrada con exito." << endl;
 }
