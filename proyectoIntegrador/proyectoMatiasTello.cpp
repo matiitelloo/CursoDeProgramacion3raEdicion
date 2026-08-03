@@ -184,7 +184,7 @@ void buscarPelicula(string nombres[], float calificaciones[], int duraciones[], 
     }
 }
 
-void reporte(string nombres[], int duraciones[], int cantidad){
+void reporte(string nombres[], int duraciones[], int cantidad) {
     int sumaDuracion = 0;
     int posMasLarga = 0;
 
@@ -192,6 +192,7 @@ void reporte(string nombres[], int duraciones[], int cantidad){
         sumaDuracion += duraciones[i];
         if (duraciones[i] > duraciones[posMasLarga]) {
             posMasLarga = i;
+        }
     }
     
     cout << "==== REPORTE GENERAL ====" << endl;
@@ -199,4 +200,19 @@ void reporte(string nombres[], int duraciones[], int cantidad){
     cout << "Tiempo total de reproduccion: " << sumaDuracion << " minutos" << endl;
     cout << "Pelicula mas larga: " << nombres[posMasLarga] 
          << " (" << duraciones[posMasLarga] << " min)" << endl;
+}
+
+void recomendar(string nombres[], float calificaciones[], int cantidad) {
+    cout << "==== CLASIFICACION Y RECOMENDACIONES ====" << endl;
+    for(int i = 0; i < cantidad; i++){
+        cout << "- " << nombres[i] << " (" << calificaciones[i] << "/10) -> ";
+
+        if (calificaciones[i] >=8.0){
+            cout << "Recomendada." << endl;
+        }else if (calificaciones[i] >=5.0){
+            cout << "Poco recomendada." << endl;
+        } else {
+            cout << "No recomendada." << endl;
+        }
+    }
 }
