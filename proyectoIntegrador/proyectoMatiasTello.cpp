@@ -13,7 +13,7 @@ E/P/S
 Entrada:
     - Opciones del menú (1 a 6)
     - Nombre de la película (string)
-    - Calificación (double, de 0 a 10)
+    - Calificación (float, de 0 a 10)
     - Duración en minutos (int, mayor a 0)
     - Nombre de la película a buscar
 
@@ -42,7 +42,7 @@ void mostrarMenu() {
     cout << "=====================================================================" << endl;
     cout << "================== SISTEMA DE GESTION DE PELICULAS ================== " << endl;
     cout << "=====================================================================" << endl;
-    cout << "1. Registrar una pelicula y su calificacion" << endl;
+    cout << "1. Registrar una pelicula" << endl;
     cout << "2. Mostrar todas las peliculas" << endl;
     cout << "3. Buscar pelicula por nombre" << endl;
     cout << "4. Reporte General" << endl;
@@ -123,46 +123,66 @@ int main(){
 
 void registrarPelicula(string nombres[], float calificaciones[], int duraciones[], int &cantidad) {
     if (cantidad >= 20) {
-        cout << "El sistema ha alcanzado su capacidad maxima (20 peliculas)." << endl;
-        return;
+        cout << "Error: Se ha alcanzado la capacidad maxima de 20 peliculas." << endl;
+        return; // Sale de la función antes de pedir datos
+    }
+    int n;
+    int espacioDisponible = 20 - cantidad;
+    cout << "Ingrese la cantidad de peliculas a registrar (1 a " << espacioDisponible << "): ";
+    cin >> n;
+    
+    while (n < 1 || n > espacioDisponible) {
+        cout << "Cantidad invalida. Puede registrar entre 1 y " << espacioDisponible << ": ";
+        cin >> n;
     }
 
-    cin.ignore();
-    cout << "==== REGISTRO DE PELICULA ====" << endl;
-    cout << "Ingrese el nombre de la pelicula: ";
-    getline(cin, nombres[cantidad]);
+        cout << "==== REGISTRO DE PELICULA ====" << endl;
+        cout << endl;
 
-    cout << "Ingrese la calificacion (0-10): ";
-    cin >> calificaciones[cantidad];
-    while (calificaciones[cantidad] < 0  || calificaciones[cantidad] > 10) {
+    for (int i = 0; i < n; i++) {
+        
+        cin.ignore();
+        cout << "Ingrese el nombre de la pelicula " << i+1 << ": ";
+        getline(cin, nombres[cantidad]);
+
+        cout << "Ingrese la calificacion (0-10): ";
+        cin >> calificaciones[cantidad];
+
+        while (calificaciones[cantidad] < 0  || calificaciones[cantidad] > 10) {
         cout << "ERROR. La calificacion debe estar entre 0 y 10: ";
         cin >> calificaciones[cantidad];
-    }
+            }
 
-    cout << "Ingrese la duracion (minutos): ";
-    cin >> duraciones[cantidad];
-    while (duraciones[cantidad] <= 0) {
+        cout << "Ingrese la duracion (minutos): ";
+        cin >> duraciones[cantidad];
+
+        cout << endl;
+
+        while (duraciones[cantidad] <= 0) {
         cout << "ERROR. La duracion debe ser mayor a 0 minutos: ";
         cin >> duraciones[cantidad];
-    }
+        }
 
-    cantidad ++;
-    cout << "Pelicula registrada con exito." << endl;
+        cantidad++;
+        cout << "Pelicula registrada con exito." << endl;
+        cout << endl;
+    }
 }
 
 void mostrarPeliculas(string nombres[], float calificaciones[], int duraciones[], int cantidad){
     cout << "==== LISTA DE PELICULAS REGISTRADAS ===="<< endl;
     for (int i = 0; i < cantidad; i++){
-        cout << i + 1 << "." << nombres[i];
+        cout << i + 1 << ". " << nombres[i];
         cout << " | Calificacion: " << calificaciones[i] << "/10";
         cout << " | Duracion: " << duraciones[i] << " min" << endl;
     }
+    cout << endl;
 }
 
 void buscarPelicula(string nombres[], float calificaciones[], int duraciones[], int cantidad){
     cin.ignore();
     string busqueda;
-    cout << "==== BUSCAR PELICULA ====";
+    cout << "==== BUSCAR PELICULA ====" << endl;
     cout << "Ingrese el nombre exacto de la pelicula: ";
     getline(cin, busqueda);
 
@@ -180,7 +200,7 @@ void buscarPelicula(string nombres[], float calificaciones[], int duraciones[], 
     }
 
     if(!encontrada){
-        cout << "Error: la pelicula "<< "\033[1m" << busqueda << "\033[0m" << " no se encuentra en el registro." << endl;
+        cout << "Error: La pelicula "<< "\033[1m" << busqueda << "\033[0m" << " no se encuentra en el registro." << endl;
     }
 }
 
