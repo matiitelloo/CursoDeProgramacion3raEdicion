@@ -1,6 +1,6 @@
 /*
 EJERCICIO 3 - Encapsulamiento con validacion
-Autor:Jhonatan Torres
+Autor: Matias Tello S.
 
 Enunciado:
     Crear una clase llamada CuentaBancaria con los atributos privados titular y saldo.

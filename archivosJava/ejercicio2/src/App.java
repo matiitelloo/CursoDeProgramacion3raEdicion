@@ -1,6 +1,6 @@
 /*
 Ejercicio2 - Constructor y metodos
-Autor: Jhonatan Torres
+Autor: Matias Tello S.
 Enunciado: 
     Crear una clase llamada Producto con los atributos nombre, precio y stock.
     La clase debe tener constructor, un metodo para mostrar informacion 
