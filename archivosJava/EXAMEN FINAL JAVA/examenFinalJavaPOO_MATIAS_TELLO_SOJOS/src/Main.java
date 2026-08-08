@@ -1,5 +1,5 @@
 /*
-EXAMEN FINAL JAVA POO
+EXAMEN FINAL - JAVA POO
 Autor: Matias Tello S.
 Fecha: 7 de agosto de 2026
 */
