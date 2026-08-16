@@ -42,6 +42,6 @@ public class Telefono {
         System.out.println("Marca  : " + marca);
         System.out.println("Modelo  : " + modelo);
         System.out.println("Precio  : $" + String.format("%.2f", precio));
-        System.out.println("====================================");
+        System.out.println("=========================================================");
     }
 }
