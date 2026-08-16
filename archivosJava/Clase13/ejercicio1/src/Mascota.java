@@ -13,8 +13,8 @@ public class Mascota {
     public void mostrarInfo(){
         System.out.println("Nombre: " + nombre);
         System.out.println("Especie: " + especie);
-        System.out.println("Edad: " + edad + "años");
-        System.out.println("==========================");
+        System.out.println("Edad: " + edad + " anios");
+        System.out.println("=================================================");
 
     }
 }
